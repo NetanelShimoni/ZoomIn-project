@@ -28,7 +28,7 @@ const FilmData = ({ chosenFilm }: IFilmsData) => {
                 padding: "20px",
                 textAlign: "center",
                 justifyContent: "center",
-                border: "2px red solid", height: "107vh"
+                border: "2px red solid", height: "118vh"
             }}>
                 <p>Title: {filmParam?.title}</p>
                 <p>Created: {filmParam?.created.toString()}</p>
