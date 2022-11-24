@@ -23,7 +23,7 @@ const TOC = ({ films, setChosenFilm }: IOTC) => {
         if (titleArray) {
             const titleArrayParse = JSON.parse(titleArray);
             const x = filmsWithFav?.map((fil: any) => {
-                if (titleArrayParse.find((titleParse: any)=> titleParse.title === fil.title)) {
+                if (titleArrayParse.find((titleParse: any) => titleParse.title === fil.title)) {
                     return {
                         ...fil,
                         isFav: true
@@ -42,6 +42,7 @@ const TOC = ({ films, setChosenFilm }: IOTC) => {
     }
 
     const handleOnClickOnStar = (e: any, title: string) => {
+        e.preventDefault();
         const x = filmsWithFav?.map((fil: any) => {
             if (fil.title === title) {
                 return { ...fil, isFav: !fil.isFav }
@@ -55,12 +56,12 @@ const TOC = ({ films, setChosenFilm }: IOTC) => {
 
     return <>{
         filmsWithFav?.map((film: any) =>
-            <div onClick={() => handleOnClick(film)} style={{
+            <div style={{
                 padding: "8vh", display: "grid",
                 gridTemplateColumns: "70% 30%",
                 cursor: "pointer", border: "2px #fff solid"
             }}>
-                <p style={{ margin: 0 }}>{film?.title}</p>
+                <p style={{ margin: 0 }} onClick={() => handleOnClick(film)}>{film?.title}</p>
                 {film?.isFav ? <StarIcon onClick={(e) => handleOnClickOnStar(e, film.title)} /> :
                     <StarBorderIcon style={{ display: "flex", alignContent: "end" }} onClick={(e) => handleOnClickOnStar(e, film.title)} />
                 }
