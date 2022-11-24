@@ -57,13 +57,14 @@ const TOC = ({ films, setChosenFilm }: IOTC) => {
     return <>{
         filmsWithFav?.map((film: any) =>
             <div style={{
-                padding: "8vh", display: "grid",
-                gridTemplateColumns: "70% 30%",
+                padding: "8vh", 
+                display: "flex",
+                justifyContent:"space-between",
                 cursor: "pointer", border: "2px #fff solid"
             }}>
                 <p style={{ margin: 0 }} onClick={() => handleOnClick(film)}>{film?.title}</p>
                 {film?.isFav ? <StarIcon onClick={(e) => handleOnClickOnStar(e, film.title)} /> :
-                    <StarBorderIcon style={{ display: "flex", alignContent: "end" }} onClick={(e) => handleOnClickOnStar(e, film.title)} />
+                    <StarBorderIcon style={{  alignContent: "end" }} onClick={(e) => handleOnClickOnStar(e, film.title)} />
                 }
             </div>)
     }</>

@@ -31,6 +31,10 @@
 .grid {
   display: grid;
   background-color: #282c34;
+  background-image:  url("../public/sky.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   grid-template-columns: 30% 70%;
   min-height: 100vh;
