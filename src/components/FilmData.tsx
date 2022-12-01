@@ -24,11 +24,12 @@ const FilmData = ({ chosenFilm }: IFilmsData) => {
     return (
         filmParam ?
             <div style={{
-                color: "#fff", position: "relative",
+                color: "#fff", display: "flex",
+                flexDirection: "column",
                 padding: "20px",
                 textAlign: "center",
                 justifyContent: "center",
-                border: "2px red solid", height: "107vh"
+                border: "2px #fff solid", height: "118vh"
             }}>
                 <p>Title: {filmParam?.title}</p>
                 <p>Created: {filmParam?.created.toString()}</p>
@@ -40,7 +41,7 @@ const FilmData = ({ chosenFilm }: IFilmsData) => {
                 padding: "20px",
                 textAlign: "center",
                 justifyContent: "center",
-                border: "2px #ffff solid", height: "110vh"
+                border: "2px #ffff solid", height: "118vh"
             }}>No movie selected </div>
     );
 }

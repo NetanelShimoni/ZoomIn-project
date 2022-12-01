@@ -3,7 +3,7 @@ import './App.css';
 import FilmData from './components/FilmData';
 import TOC from './components/TOC';
 import axois from "axios"
-import {  IResult } from './types/types';
+import { IResult } from './types/types';
 
 const App = () => {
   useEffect(() => {
@@ -30,16 +30,14 @@ const App = () => {
         , flexDirection: "column", padding: "10px",
         color: "#ffff", justifyContent: 'center',
       }}>
-        <TOC films={films} setChosenFilm={setChosenFilm} />
+        {films ? <TOC films={films} setChosenFilm={setChosenFilm} /> : <></>}
       </div>
-      {films? <FilmData chosenFilm={chosenFilm}  /> : <></>}
-      
+      {films ? <FilmData chosenFilm={chosenFilm} /> : <></>}
+
     </div>
   );
 }
 
 export default App;
-function uaeEffect(arg0: () => void, arg1: never[]) {
-  throw new Error('Function not implemented.');
-}
+
 
